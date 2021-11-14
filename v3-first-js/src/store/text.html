@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+</html>
+<script>
+
+  var o ={
+    a: '23',
+    fn: function() {
+      console.log('this.a:', this.a)
+    }
+  }
+  o.fn()
+  var fc = o.fn
+  fc()
+
+  var bObj = {
+    b:'12b',
+    bc: {
+      b: '23b',
+      fn: function() {
+        console.log('this.b', this.b)
+      }
+    }
+  }
+
+  bObj.bc.fn()
+
+  function fn3() {
+    this.cd = 'cd';
+    // return function() {}
+    return '34'
+  }
+
+  var aFn3 = new fn3;
+  console.log('aFn3:', aFn3)
+  let a = 'index.php?blogId=1&op=Default&b=2%ff'
+  let c= encodeURIComponent(a)
+  let d= decodeURIComponent(c)
+  console.log('encodeURIComponent:', c)
+  console.log('decodeURIComponent:', d)
+
+</script>
